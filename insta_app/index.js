@@ -146,6 +146,7 @@ Users.destroy({
 
 // POSTS
 // -----
+// CREATE
 Posts.create({
     username:'dolantrulp',
     location:'hell',
@@ -247,6 +248,7 @@ Posts.destroy({
 
 // COMMENTS
 // --------
+// CREATE
 Comments.create({
     username:'billysouthard',
     comment:'hello',
