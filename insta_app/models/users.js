@@ -18,10 +18,16 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     website: DataTypes.STRING,
-    posts: DataTypes.INTEGER,
+    posts: { 
+      type: DataTypes.INTEGER,
+      validate: {isInt: { msg: "Posts must be an integer" }}
+    },
     followers: DataTypes.INTEGER,
     following: DataTypes.INTEGER,
-    email: DataTypes.STRING
+    email: { 
+      type: DataTypes.STRING,
+      validate: {isEmail: { msg: "email must be in email@email.com format" }}
+    },
   }, {
     sequelize,
     modelName: 'Users',
