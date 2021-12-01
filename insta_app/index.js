@@ -170,7 +170,7 @@ Posts.findOne({
     console.log('find one Post failed', error);
 });
 
-Users.findOne({
+Posts.findOne({
     where: {username: { [Op.like]:'%rulp'},
             likes: {[Op.lt]: 10}}
 }).then(foundOnePost =>{
