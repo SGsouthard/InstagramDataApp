@@ -13,7 +13,7 @@ website:string,
 posts:integer,
 followers:integer,
 following:integer,
-email:string,
+email:string
 --
 Posts
 --
@@ -101,6 +101,25 @@ Users.findAll({
      console.log(foundAllUsers)
 }).catch(function(error){
      console.log('find all Users failed', error)
+});
+
+// Find Or Create
+//--
+Users.findOrCreate({
+    where: {
+        name:'Dolan Trulp',
+    },
+    defaults: { 
+        username:'dolantrulp',
+        password:'big_money',
+        website:'https://www.youtube.com/watch?v=MlW7T0SUH0E',
+        posts: 6969,
+        followers: 52,
+        following: 0,
+        email:'dolan@email.com'
+     }
+}).then(([user, created])=>{
+    console.log(user);
 });
 
 // findByPk
